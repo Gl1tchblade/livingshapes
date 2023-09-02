@@ -1,0 +1,135 @@
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: black;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  transition: background-color 0.5s ease-in-out;
+}
+
+#wrapper {
+  aspect-ratio: 1.618;
+  width: 90vmin;
+  position: relative;
+}
+
+.shape {
+  height: 30%;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 5%);
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.shape:nth-child(1) {
+  background-color: rgb(176, 190, 197);
+  z-index: 2;
+}
+
+.shape:nth-child(2) {
+  background-color: rgb(245, 245, 245);
+  z-index: 2;
+}
+
+.shape:nth-child(3) {
+  background-color: rgb(155, 93, 229);
+  z-index: 1;
+}
+
+.shape:nth-child(4) {
+  background-color: rgb(241, 91, 181);
+  z-index: 2;
+}
+
+.shape:nth-child(5) {
+  background-color: rgb(254, 228, 64);
+  z-index: 2;
+}
+
+.shape:nth-child(6) {
+  background-color: rgb(0, 187, 249);
+  z-index: 2;
+}
+
+.shape:nth-child(7) {
+  background-color: rgb(0, 245, 212);
+  z-index: 2;
+}
+
+#wrapper[data-configuration="1"] .shape:nth-child(1) {
+  left: 0;
+  top: 0;
+  height: 50%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="1"] .shape:nth-child(2) {
+  left: 20%;
+  top: 0;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-roundness="1"] .shape {
+  border-radius: 6rem;
+}
+
+#wrapper[data-roundness="2"] .shape {
+  border-radius: 0rem;
+}
+
+#wrapper[data-roundness="3"] .shape {
+  border-radius: 30rem;
+}
+
+body.menu-toggled > .meta-link > span {
+  color: rgb(30, 30, 30);
+}
+
+#source-link {
+  bottom: 0%;
+  color: white;
+}
+
+#source-link > i {
+  color: rgb(94, 106, 210);
+}
+
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+  z-index: 10000;
+}
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.back-arrow a.arrow {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+}
